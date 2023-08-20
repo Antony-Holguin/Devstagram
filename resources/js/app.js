@@ -1,5 +1,5 @@
 import Dropzone from "dropzone";
-
+//DropZone
 Dropzone.autoDiscover = false;
 
 let dropzone = new Dropzone("#dropzone", {
@@ -10,3 +10,4 @@ let dropzone = new Dropzone("#dropzone", {
     maxFiles:1,
     uploadMultiple:false,
 });
+
