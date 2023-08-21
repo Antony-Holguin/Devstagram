@@ -11,3 +11,16 @@ let dropzone = new Dropzone("#dropzone", {
     uploadMultiple:false,
 });
 
+//Dropzone Events
+
+dropzone.on('sending', function(file,xhr, formData){
+    console.log(file);
+});
+
+dropzone.on("removedfile", function(file, response){
+    console.log("Foto eliminada");
+});
+
+dropzone.on("success", function(file, response){
+    console.log("Image upload correctly");
+});
