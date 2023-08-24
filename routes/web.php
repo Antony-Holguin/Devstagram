@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -34,8 +36,18 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 //Posts
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/posts',[PostController::class,'store'])->name('posts.store');
+Route::get('/{user:username}/posts/{post}',[PostController::class, 'show'])->name('posts.show');
 
 //ImagePost
 //Route::post('/imagenes',[ImageController::class,'store'])->name('imagenes.store');
 Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
+
+//Comments
+Route::post('/{user:username}/posts/{post}', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+//Likes
+Route::post('/posts/{post}/like', [LikeController::class, 'store'])->name('posts.likes.store');
+Route::delete('/posts/{post}/like', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
 

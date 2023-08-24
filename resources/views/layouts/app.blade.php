@@ -65,4 +65,5 @@
             DevStagram - Todos los derechos reservados {{now()->year}}
         </footer>
     </body>
+    <script src="{{asset('/scripts/helpers.js')}}"></script>
 </html>

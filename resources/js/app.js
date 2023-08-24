@@ -13,14 +13,15 @@ let dropzone = new Dropzone("#dropzone", {
 
 //Dropzone Events
 
-dropzone.on('sending', function(file,xhr, formData){
-    console.log(file);
+
+
+
+dropzone.on("success", function(file, response){
+    alert("Image uploaded correctly");
+    console.log(`Name of the image: ${response.image}`);
+    document.getElementById("image").value = response.image;
 });
 
 dropzone.on("removedfile", function(file, response){
     console.log("Foto eliminada");
-});
-
-dropzone.on("success", function(file, response){
-    console.log("Image upload correctly");
 });

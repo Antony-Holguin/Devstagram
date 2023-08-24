@@ -4,6 +4,7 @@ export default {
       "./resources/**/*.blade.php",
 
        "./resources/**/*.js",
+    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/tailwind.blade.php",
   ],
   theme: {
     extend: {},
