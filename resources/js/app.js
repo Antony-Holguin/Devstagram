@@ -25,3 +25,4 @@ dropzone.on("success", function(file, response){
 dropzone.on("removedfile", function(file, response){
     console.log("Foto eliminada");
 });
+
