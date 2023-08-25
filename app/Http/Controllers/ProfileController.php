@@ -22,7 +22,7 @@ class ProfileController extends Controller
         $request->request->add(['username'=> Str::slug($request->username)]);
         $this->validate($request, [
             'username' => ['required', Rule::unique('users','username')->ignore(auth()->user()), 'max:30', 'min:3','not_in:puta,zorra,perra,edit-profile'],
-            'email' => ['required', 'email']
+            'email' => ['required', 'email','max:60', Rule::unique('users', 'email')->ignore(auth()->user())],
         ]);
 
         
@@ -42,9 +42,13 @@ class ProfileController extends Controller
             $user = User::find(auth()->user()->id);
             $user->username = $request->username;
             $user->image = $imageName ?? auth()->user()->image ?? '';
+            $user->email = $request->email;
             $user->save();
         }else{
-            dd("nooo");
+            $user = User::find(auth()->user()->id);
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->save();
         }
         
 
