@@ -9,7 +9,7 @@
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex md:flex-row">
                 <div class="w-8/12 lg:w-6/12 px-5 ">
-                    <img  src="{{asset('img/usuario.svg')}}" alt="">
+                    <img class="rounded-full" src="{{$user->image ? asset('profiles').'/'.$user->image : asset('img/usuario.svg')}}" alt="">
                 </div>
 
                 <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10">
@@ -31,19 +31,45 @@
                      </div>
 
                     <p class="font-bold">
-                        0
-                        <span class="font-normal">Followers</span>
+                        {{$user->followers->count()}}
+                        <span class="font-normal"> @choice("Follower|Followers", $user->followers->count()) </span>
                     </p>
 
                     <p class="font-bold">
-                        0
+                        {{$user->peopleIFollow->count()}}
                         <span class="font-normal">Following</span>
                     </p>
 
                     <p class="font-bold">
-                        0
+                        {{$user->posts->count()}}
                         <span class="font-normal">Posts</span>
                     </p>
+
+                    
+                        
+                    
+                        @auth
+                        @if ($user->id !== auth()->user()->id)
+                            @if ( $user->following(auth()->user()))                              
+                            
+                                <form method="POST" action="{{route('users.follow', $user)}}">
+                                    @csrf
+                                    <input class="bg-blue-700 text-white p-2 rounded-lg mt-2 cursor-pointer hover:bg-blue-900 px-5" type="submit" value="Follow">
+                                </form>
+
+                                {{-- Repair this --}}
+                                    <form action="{{route('users.unfollow', $user)}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <input class="bg-red-700 text-white p-2 rounded-lg mt-2 cursor-pointer hover:bg-red-900 px-5" type="submit" value="Unfollow">
+                                            
+                                    </form>
+
+                                    
+                            @endif
+                        @endauth
+                    @endif
+
                 </div>
         </div>
         

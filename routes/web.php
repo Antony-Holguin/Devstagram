@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
@@ -22,9 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+//Home
+Route::get('/home',HomeController::class)->name('home');
 
 
 
@@ -57,6 +58,11 @@ Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.d
 //Likes
 Route::post('/posts/{post}/like', [LikeController::class, 'store'])->name('posts.likes.store');
 Route::delete('/posts/{post}/like', [LikeController::class, 'destroy'])->name('posts.likes.destroy');
+
+//Followers
+
+Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
+Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
 
 
 

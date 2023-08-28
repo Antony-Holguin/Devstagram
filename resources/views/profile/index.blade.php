@@ -40,8 +40,8 @@
             </form>
         </div>
 
-        <div class="bg-blue-500 md:w-1/2 max-w-lg max-h-sm">
-            <img class="h-full w-full" src="{{asset('profiles/'.auth()->user()->image)}}" alt="{{auth()->user()->image}}">
+        <div class=" md:w-1/2 max-w-lg max-h-sm">
+            <img class="rounded-full" src="{{asset('profiles/'.auth()->user()->image)}}" alt="{{auth()->user()->image}}">
         </div>
     </div>
 @endsection()
