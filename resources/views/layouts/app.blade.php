@@ -10,6 +10,7 @@
         
         @vite('resources/js/app.js')
         
+        @livewireStyles()
         
 
     </head>
@@ -66,6 +67,8 @@
             DevStagram - Todos los derechos reservados {{now()->year}}
         </footer>
     </body>
+
+    @livewireScripts()
     <script src="{{asset('/scripts/helpers.js')}}"></script>
     {{-- <script type="text/javascript"> document.onkeydown = function(){return false}</script>; --}}
 </html>
