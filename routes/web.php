@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Home
-Route::get('/home',HomeController::class)->name('home');
+Route::get('/',HomeController::class)->name('home');
 
 
 
