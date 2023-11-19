@@ -10,9 +10,19 @@
             <img src="{{asset('img/login.jpg')}}" alt="login">
         </div>
 
+        
+
+
+
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
             <form action="{{route('login.store')}}" novalidate method="POST">
                 @csrf
+
+                <div>
+                    @if (session('registerOk'))
+                        <p class="mt-2 p-2 bg-green-600 rounded-lg text-white text-center">{{session('registerOk')}}</p>
+                    @endif
+                </div>
 
                 <div>
                     <label class="mb-2 block uppercase text-gray-500 font-bold " for="">Email:</label>
