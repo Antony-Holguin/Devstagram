@@ -46,15 +46,15 @@
                     @enderror
                 </div>
 
-                
+
 
                 <div>
                     <input class="mt-5 border rounded-lg bg-sky-600 text-white w-full p-3 uppercase cursor-pointer" type="submit" value="Post">
-                    
+
                 </div>
 
-               
-                
+
+
             </form>
         </div>
     </div>
