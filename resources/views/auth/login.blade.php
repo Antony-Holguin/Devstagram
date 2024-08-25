@@ -7,10 +7,10 @@
 @section('content')
     <div class="md:flex md:justify-center md:gap-6  md:items-center"> <!--En tamano mediano se aplicara flexbox-->
         <div class="md:w-6/12 p-5">
-            <img src="{{asset('img/login.jpg')}}" alt="login">
+            <img src="{{asset('img/register2.jpg')}}" alt="login">
         </div>
 
-        
+
 
 
 
@@ -46,21 +46,21 @@
                     @endif
                 </div>
 
-               
+
 
                 <div>
                     <input class="mt-5 border rounded-lg"  name="remember" type="checkbox" autocomplete="off">
                     <label class="mt-5  text-gray-500 font-bold " for="">Remember</label>
-                    
+
                 </div>
 
                 <div>
                     <input class="mt-5 border rounded-lg bg-sky-600 text-white w-full p-3 uppercase cursor-pointer" type="submit" value="Log in">
-                    
+
                 </div>
 
-               
-                
+
+
             </form>
         </div>
     </div>

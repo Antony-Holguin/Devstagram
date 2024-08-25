@@ -29,7 +29,7 @@
 
                 <div>
                     <label class="mb-2 block uppercase text-gray-500 font-bold " for="">Description of the post:</label>
-                    <textarea class="border md:w-full @error('description') border-red-600 @enderror" name="description" @error('description') border-red-600 @enderror" id="description" cols="50" rows="5">{{old('descriptiom')}}</textarea>
+                    <textarea class="border md:w-full @error('description') border-red-600 @enderror" name="description" id="description" cols="50" rows="5">{{old('description')}}</textarea>
                     @error('description')
                         <p class="p-1 text-white bg-red-600 rounded-lg text-center">
                             {{$message}}

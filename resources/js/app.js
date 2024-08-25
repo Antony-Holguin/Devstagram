@@ -22,6 +22,7 @@ dropzone.on("success", function(file, response){
     document.getElementById("image").value = response.image;
 });
 
+
 dropzone.on("removedfile", function(file, response){
     console.log("Foto eliminada");
 });

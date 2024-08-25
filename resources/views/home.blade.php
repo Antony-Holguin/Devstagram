@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    Aplicacion devstagram
+    DebugTalk
 @endsection()
 
 @section('content')
-    
+
     <x-list-posts :posts="$posts" />
 
 @endsection()

@@ -9,10 +9,10 @@
                             <img src="{{asset('uploads').'/'.$post->image}}" alt="{{$post->title}}">
                         </a>
                     </div>
-                    
-                    
+
+
                 @endforeach
-                @else
+                    @else
                     <h2>No post yet</h2>
 
             </div>
@@ -22,6 +22,6 @@
             </div>
 
         @endif
-        
+
     </div>
 </div>

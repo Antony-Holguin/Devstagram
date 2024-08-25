@@ -7,7 +7,7 @@
 @section('content')
     <div class="md:flex md:justify-center md:gap-6  md:items-center"> <!--En tamano mediano se aplicara flexbox-->
         <div class="md:w-6/12 p-5">
-            <img src="{{asset('img/registrar.jpg')}}" alt="Register">
+            <img src="{{asset('img/login2.png')}}" alt="Register">
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
@@ -64,16 +64,16 @@
                 {{-- <div>
                     <input class="mt-5 border rounded-lg"  name="remember" type="checkbox" autocomplete="off">
                     <label class="mt-5  text-gray-500 font-bold " for="">Remember</label>
-                    
+
                 </div> --}}
 
                 <div>
                     <input class="mt-5 border rounded-lg bg-sky-600 text-white w-full p-3 uppercase cursor-pointer" type="submit" value="Create account">
-                    
+
                 </div>
 
-               
-                
+
+
             </form>
         </div>
     </div>
